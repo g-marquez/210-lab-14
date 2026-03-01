@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <iomanip>
+#include <string>
 using namespace std;
 
 int SIZE = 5;
@@ -18,23 +18,26 @@ class Color {
     int blue_val;
 
     public:
+    //getters and setters
     int getRedVal() const {return red_val;}
     int getGreenVal() const {return green_val;}
     int getBlueVal() const {return blue_val;}
     void setRedVal(int val) {this->red_val = val;}
     void setGreenVal(int val) {this->green_val = val;}
     void setBlueVal(int val) {this->blue_val = val;}
+    //member print() method
     void print() {
-        cout << "Red Value: " << red_val << endl;
-        cout << "Green Value: " << green_val << endl;
-        cout << "Blue Value: " << blue_val << endl;
+        cout << "\tRed Value: " << red_val << endl;
+        cout << "\tGreen Value: " << green_val << endl;
+        cout << "\tBlue Value: " << blue_val << endl;
         cout << endl;
     }
 };
 
 int main() {
-    //create array of colors using file input
+    //create array of color objects using file input
     Color colors[SIZE];
+    string colorNames[SIZE] = {"Grey", "Salmon", "Beige", "Teal", "Maroon"};
     ifstream fin("colors.txt");
     if (fin.good( )) {
         int red, green, blue;
@@ -57,10 +60,12 @@ int main() {
         cout << "ERROR! Please verify file name/directory and restart program.";
         return 1;
     }
-    cout << "Outputting color objects: " << endl;
+    //output values using color object's print() method
+    cout << "Outputting color objects: ";
     for (Color c : colors) {
-        static int i = 1;
-        cout << "Color# " << i << ":" << endl;
+        static int i = 0;
+        cout << colorNames[i] << endl;
+        cout << "Color# " << i + 1 << ":" << endl;
         c.print();
         i++;
     }
