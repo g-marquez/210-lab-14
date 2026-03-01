@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
 class Color {
@@ -15,6 +16,13 @@ class Color {
     int green_val;
 
     public:
-    int getRedVal() const;
-    int getBlueVal() const;
+    int getRedVal() const {return red_val;}
+    int getBlueVal() const {return blue_val;}
+    int getGreenVal() const {return green_val;}
+    void setRedVal(int val) {this->red_val = val;}
+    void setBlueVal(int val) {this->blue_val = val;}
+    void setGreenVal(int val) {this->green_val = val;}
+    void print() {
+
+    }
 };
