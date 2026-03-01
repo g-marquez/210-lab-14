@@ -28,6 +28,7 @@ class Color {
         cout << "Red Value: " << red_val << endl;
         cout << "Green Value: " << green_val << endl;
         cout << "Blue Value: " << blue_val << endl;
+        cout << endl;
     }
 };
 
@@ -36,7 +37,20 @@ int main() {
     Color colors[SIZE];
     ifstream fin("colors.txt");
     if (fin.good( )) {
-        
+        int red, green, blue;
+        int index = 0;
+
+        while (fin >> red) {
+            fin >> green;
+            fin >> blue;
+
+            Color temp;
+            temp.setRedVal(red);
+            temp.setGreenVal(green);
+            temp.setBlueVal(blue);
+            colors[index] = temp;
+            index++;
+        }
         fin.close( );
     }
     else
