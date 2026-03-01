@@ -23,6 +23,8 @@ class Color {
     void setBlueVal(int val) {this->blue_val = val;}
     void setGreenVal(int val) {this->green_val = val;}
     void print() {
-
+        cout << "Red Value: " << red_val << endl;
+        cout << "Blue Value: " << blue_val << endl;
+        cout << "Green Value: " << green_val << endl;
     }
 };
