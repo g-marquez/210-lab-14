@@ -37,6 +37,7 @@ class Color {
 int main() {
     //create array of color objects using file input
     Color colors[SIZE];
+    //color names to ouput at the end
     string colorNames[SIZE] = {"Grey", "Salmon", "Beige", "Teal", "Maroon"};
     ifstream fin("colors.txt");
     if (fin.good( )) {
@@ -46,7 +47,8 @@ int main() {
         while (fin >> red) {
             fin >> green;
             fin >> blue;
-
+            
+            //create temp color object, populate, and add it to array
             Color temp;
             temp.setRedVal(red);
             temp.setGreenVal(green);
@@ -61,11 +63,10 @@ int main() {
         return 1;
     }
     //output values using color object's print() method
-    cout << "Outputting color objects: ";
+    cout << "Outputting color objects: " << endl;
     for (Color c : colors) {
         static int i = 0;
-        cout << colorNames[i] << endl;
-        cout << "Color# " << i + 1 << ":" << endl;
+        cout << "Color #" << i + 1 << ": " << colorNames[i] << endl;
         c.print();
         i++;
     }
