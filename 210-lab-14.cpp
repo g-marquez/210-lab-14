@@ -12,20 +12,20 @@ using namespace std;
 
 class Color {
     int red_val;
-    int blue_val;
     int green_val;
+    int blue_val;
 
     public:
     int getRedVal() const {return red_val;}
-    int getBlueVal() const {return blue_val;}
     int getGreenVal() const {return green_val;}
+    int getBlueVal() const {return blue_val;}
     void setRedVal(int val) {this->red_val = val;}
-    void setBlueVal(int val) {this->blue_val = val;}
     void setGreenVal(int val) {this->green_val = val;}
+    void setBlueVal(int val) {this->blue_val = val;}
     void print() {
         cout << "Red Value: " << red_val << endl;
-        cout << "Blue Value: " << blue_val << endl;
         cout << "Green Value: " << green_val << endl;
+        cout << "Blue Value: " << blue_val << endl;
     }
 };
 
