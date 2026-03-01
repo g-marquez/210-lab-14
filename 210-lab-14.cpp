@@ -28,3 +28,10 @@ class Color {
         cout << "Green Value: " << green_val << endl;
     }
 };
+
+int main() {
+    
+
+
+    return 0;
+}
