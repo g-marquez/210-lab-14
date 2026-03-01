@@ -10,6 +10,8 @@
 #include <iomanip>
 using namespace std;
 
+int SIZE = 5;
+
 class Color {
     int red_val;
     int green_val;
@@ -30,7 +32,16 @@ class Color {
 };
 
 int main() {
-    
+    //create array of colors using file input
+    Color colors[SIZE];
+    ifstream fin("colors.txt");
+    if (fin.good( )) {
+        
+        fin.close( );
+    }
+    else
+        cout << "ERROR! Please verify file name/directory and restart program.";
+        return 1;
 
 
     return 0;
