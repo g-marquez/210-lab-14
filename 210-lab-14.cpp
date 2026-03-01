@@ -53,10 +53,16 @@ int main() {
         }
         fin.close( );
     }
-    else
+    else {
         cout << "ERROR! Please verify file name/directory and restart program.";
         return 1;
-
-
+    }
+    cout << "Outputting color objects: " << endl;
+    for (Color c : colors) {
+        static int i = 1;
+        cout << "Color# " << i << ":" << endl;
+        c.print();
+        i++;
+    }
     return 0;
 }
